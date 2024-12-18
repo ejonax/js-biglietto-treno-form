@@ -16,12 +16,8 @@ const discountMin=0.20;
 const discountMax=0.40;
 
 // controlliamo se il primo text input è vuoto            
-if((kmNumberInput)===''){
-    priceResult.innerHTML = 'Inserisci un numero per favore per i chilometri che si devono fare !';
-}
-// controlliamo se il secondo text input è vuoto  
-else if ((ageNumberInput)===''){
-    priceResult.innerHTML = 'Inserisci un numero per favore per la tua età';
+if(((kmNumberInput)==='') || ((ageNumberInput)==='') ){
+    priceResult.innerHTML = 'I valori per l`età  e per i chilomtri non devono essere vuoti!';
 
 } else{
         //convertiamo in numeri i valori selezionati da tutte due gli input della forma
@@ -29,12 +25,8 @@ else if ((ageNumberInput)===''){
         const ageNo = parseInt(ageNumberInput);
       
         // se il valore inserito nell'input dei km non è un numero allora avisa l'utente
-        if (isNaN(kmNo)){
-            priceResult.innerHTML = 'Inserisci un numero per favore per i chilometri';
-        }
-        // se il valore inserito nell'input dell'età non è un numero allora avisa l'utente
-        else if (isNaN(ageNo)){
-            priceResult.innerHTML = 'Inserisci un numero per favore per la tua età';
+        if ((isNaN(kmNo)) || (isNaN(ageNo))) {
+            priceResult.innerHTML = 'Inserisci un numero per favore per i chilometri per la tua età';
         }
         else {
                 //controllo se il valore inserito per i chilometri è negativo oppure 0
